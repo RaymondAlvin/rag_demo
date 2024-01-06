@@ -57,3 +57,7 @@ def get_index_for_pdf(pdf_files, pdf_names, openai_api_key):
         documents = documents + text_to_docs(text, filename)
     index = docs_to_index(documents, openai_api_key)
     return index
+
+def get_api_key(file_path):
+    with open(file_path, 'r') as file:
+        return file.read().strip()
